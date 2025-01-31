@@ -1,0 +1,11 @@
+<div id="send_message" class="mt-4">
+    <% if flash[:error] %>
+        <p class="text-red-500"><%= flash[:error] %></p>
+    <% end %>
+    <%= form_for(Message.new, data: { controller: "message", action: "submit->message#submit" }) do |f| %>
+        <%= f.hidden_field :order_id, value: order.id, data: { message_target: "order_id" } %>
+        <%= f.hidden_field :user_id, value: current_user.id, data: { message_target: "user_id" } %>
+        <%= f.text_field :message, class: "w-full", data: { message_target: "message" } %>
+        <%= f.submit "Send", class: "btn btn-primary", data: { action: "click->message#submit", order_id: order.id, user_id: current_user.id } %>
+    <% end %>
+</div>

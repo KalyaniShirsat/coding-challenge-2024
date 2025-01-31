@@ -1,0 +1,9 @@
+<div id="messages" class="flex flex-col gap-4">
+  <% @messages.each do |message| %>
+    <div class="bg-white p-4 rounded-lg shadow-md">
+      <p class="font-bold"><%= message.user&.email || message.doctor&.email %></p>
+      <p class="text-gray-800"><%= message.message %></p>
+      <p class="text-gray-500 text-sm"><%= message.created_at.strftime("%B %d, %Y %I:%M %p") %></p>
+    </div>
+  <% end %>
+</div>
