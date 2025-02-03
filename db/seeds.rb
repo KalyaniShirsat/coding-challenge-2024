@@ -28,6 +28,12 @@ doctor = User.create(
     password_confirmation: 'Password1!',
     is_doctor: true
 )
+support_user = User.create(
+  email: 'support@example.com',
+  password: 'Password1!',
+  password_confirmation: 'Password1!',
+  is_support: true,
+)
 
 order = Order.create(user: user, doctor: doctor, order_items: order_items, total: 450.00, created_at: Time.now - 3.days)
 

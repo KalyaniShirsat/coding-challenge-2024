@@ -9,6 +9,7 @@
 #  encrypted_password     :string           default(""), not null
 #  expiry                 :string
 #  is_doctor              :boolean          default(FALSE)
+#  is_support             :boolean          default(FALSE)
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
